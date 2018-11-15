@@ -1,7 +1,9 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
@@ -80,6 +82,9 @@ public class DetailActivity extends AppCompatActivity {
         also_known_tv.setText(also_known_String);
 
         ingredients_tv = (TextView) findViewById(R.id.ingredients_tv);
+            Typeface typeface = ResourcesCompat.getFont(this , R.font.allemademo);
+            ingredients_tv.setTypeface(typeface);
+
         String ingredients_String = sandwich.getIngredients().toString().replace("[" ,"").replace("]" , "");
         ingredients_tv.setText(ingredients_String);
 
@@ -88,8 +93,11 @@ public class DetailActivity extends AppCompatActivity {
         origin_tv.setText(origin_String);
 
         description_tv = (TextView) findViewById(R.id.description_tv);
+        Typeface typeface2 = ResourcesCompat.getFont(this , R.font.adleryproblockletter);
+        description_tv.setTypeface(typeface2);
         String desc_String = sandwich.getDescription().toString();
         description_tv.setText(desc_String);
+
 
     }
 }
